@@ -1,34 +1,31 @@
-//Write a program to accept integer values of base and index and calculate power of base to
-//index.
-#include<stdio.h>
-int main()
-{ 
+//13. Write a program to display n terms of Fibonacci series
+#include <stdio.h>
+int main() {
 
-int base,index,i;
-long double power=1;
-printf("Enter the base: \n");
-scanf("%d",&base);
-printf("Enter the index: \n");
-scanf("%d",&index);
-// for negative index
-for (i=index;i<0;i++)
+  int i, num;
 
-  {
-  power=power/base;
- 
-  }
-  // for positive index
-for (i=index;i>0;i--)
+  // initialize first and second terms
+  int t1 = 0, t2 = 1;
 
-  {
-  power=power*base;
- 
-  }
-  printf("The power of base %d and index %d is:%Lf\n",base,index,power);
+  // initialize the next term (3rd term)
+  int nextTerm = t1 + t2;
+
   
+  printf("Enter the number of terms: ");
+  scanf("%d", &num);
 
+  // print the first two terms t1 and t2
+  printf("Fibonacci Series: %d, %d, ", t1, t2);
 
+ 
+  for (i = 3; i <= num;i++)
+  {
+    printf("%d, ", nextTerm);
+    t1 = t2;
+    t2 = nextTerm;
+    nextTerm = t1 + t2;
+  }
+
+printf("\n");
   return 0;
-
- }
-
+}

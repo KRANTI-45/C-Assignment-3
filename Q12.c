@@ -1,18 +1,34 @@
-//Write a program to find factorial of given number.
+//Write a program to accept integer values of base and index and calculate power of base to
+//index.
 #include<stdio.h>
 int main()
 { 
 
-int num,i,fact=1;
-printf("Enter the num: \n");
-scanf("%d",&num);
-
-for (i=1;i<=num;i++)
+int base,index,i;
+long double power=1;
+printf("Enter the base: \n");
+scanf("%d",&base);
+printf("Enter the index: \n");
+scanf("%d",&index);
+// for negative index
+for (i=index;i<0;i++)
 
   {
-  fact=fact*i;
+  power=power/base;
+ 
   }
-  printf("Fcatorial of %d is:%d\n",num,fact);
+  // for positive index
+for (i=index;i>0;i--)
+
+  {
+  power=power*base;
+ 
+  }
+  printf("The power of base %d and index %d is:%Lf\n",base,index,power);
+  
+
+
   return 0;
+
  }
 
